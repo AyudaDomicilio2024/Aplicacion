@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal de Empleados</title>
+  
+  <!-- Favicons y configuración generados por RealFaviconGenerator -->
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json"> <!-- Apunta a tu archivo manifest.json -->
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Portal de Empleados</h1>
+    <button class="btn" onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSeVjnL9G8aDxQ8gxmMFRwzpwlXa2qWWCDcfLeC68SjHPJ7HnQ/viewform?usp=sf_link'">Registrar Empleado</button>
+    <button class="btn" onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSe1a8dD2dgEHv4pDmG8RfuptfOUel_Yn2u2fRiSg-daxeznKQ/viewform?usp=sf_link'">Solicitar Nómina</button>
+    <button class="btn" onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLScWvBsqLaMqwSKayQYO2ivigF-CwAcegvC80nQTANABJ47rSQ/viewform?usp=sf_link'">Solicitar Guantes</button>
+  </div>
+  
+  <!-- Script para registrar el Service Worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then((registration) => {
+            console.log('Service Worker registrado con éxito:', registration);
+          })
+          .catch((error) => {
+            console.error('Error al registrar el Service Worker:', error);
+          });
+      });
+    }
+  </script>
+  
+</body>
+</html>
